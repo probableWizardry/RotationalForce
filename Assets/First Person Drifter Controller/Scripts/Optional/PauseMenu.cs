@@ -161,10 +161,6 @@ public class PauseMenu : MonoBehaviour
 				fovSlider = GUI.HorizontalSlider (new Rect (Screen.width/2, Screen.height/2 - buttonHeight + sliderHeight/2, sliderWidth, sliderHeight), fovSlider, minFOV, maxFOV, scrollBarStyle, scrollButtonStyle);
 				SetFOV();
 				
-				// SENSITIVITY SLIDER
-				GUI.skin.horizontalSliderThumb = scrollButtonStyle;
-				sensitivitySlider = GUI.HorizontalSlider (new Rect (Screen.width/2, Screen.height/2 + sliderHeight/2, sliderWidth, sliderHeight), sensitivitySlider, minSensitivity, maxSensitivity, scrollBarStyle, scrollButtonStyle);
-				SetSensitivity();
 				
 				if( GUI.Button(new Rect(Screen.width/2 - buttonWidth/2, Screen.height/2 + buttonHeight, buttonWidth, buttonHeight), "Reset to default", pauseMenuStyle) )
 				{
