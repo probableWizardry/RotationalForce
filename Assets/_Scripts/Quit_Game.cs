@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Quit_Game : MonoBehaviour
@@ -8,8 +9,7 @@ public class Quit_Game : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
-            Debug.Log("Quit");
+            SceneManager.LoadScene(0);
         }
     }
 
