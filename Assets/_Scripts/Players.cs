@@ -16,14 +16,17 @@ public class Players : MonoBehaviour
     //Calls the enum for players
     public players p;
     //inPlay tests if the players have been activated by pressing their respective button
-    public bool inPlay = false;
+    public bool inPlay = true;
     //stores the player's button
     public KeyCode actionButton;
     //allows adding force to the rigidbody
-    private Rigidbody rb;
+    public Rigidbody rb;
     //dictates the speed at which players move
     public float speed;
-    //private Transform targetHook;
+    //dictates the speed at which players rotate
+    public float rotateSpeed;
+    //This private holds the location of the peg selected by the proximity code;
+    private Transform selectedPeg;
 
     private void Start()
     {
@@ -52,12 +55,22 @@ public class Players : MonoBehaviour
         {
             if (Input.GetKeyDown(actionButton))
             {
-                //Run GetClosestHook and, well, GetClosestHook
-                //Get the Vector3 Position of the closestHook from the result of GetClosest Hook
-                
-                //  !!FIGURE OUT HOW TO DETECT WHICH WAY THE PLAYER SHOULD ROTATE DEPENDING ON THEIR POSITION RELATIVE TO THE PEG!!
+                selectedPeg = GetClosestHook(pegs);
+                rb.velocity = Vector3.zero;
+            }
 
-                transform.RotateAround(/*Vector3PositionOfClosestHook*/,/*Vector3Axis(probably Y)*/,speed * Time.deltaTime);
+            if (Input.GetKey(actionButton))
+            {
+                transform.RotateAround(selectedPeg.position, transform.up,90 * Time.deltaTime);
+                transform.LookAt(selectedPeg);
+                transform.Rotate(new Vector3(0, -90, 0));
+            }
+
+            if (Input.GetKeyUp(actionButton))
+            {
+                transform.LookAt(selectedPeg);
+                transform.Rotate(new Vector3(0, -90, 0));
+                rb.AddForce(transform.forward * speed, ForceMode.Acceleration);
             }
         }
         if (inPlay == false)
