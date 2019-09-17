@@ -83,8 +83,23 @@ public class DestructionTest : MonoBehaviour
     {
         if(collision.gameObject.tag == "BlueBird")
         {
-            Debug.Log("I have hit something");
+            Debug.Log("Blue has Lost Life");
             GM.instance.BlueLoseLife();
+        }
+        else if(collision.gameObject.tag == "RedBird")
+        {
+            Debug.Log("Red has Lost Life");
+            GM.instance.RedLoseLife();
+        }
+        else if (collision.gameObject.tag == "GreenBird")
+        {
+            Debug.Log("Green has Lost Life");
+            GM.instance.GreenLoseLife();
+        }
+        else if (collision.gameObject.tag == "YellowBird")
+        {
+            Debug.Log("Yeloow has Lost Life");
+            GM.instance.YellowLoseLife();
         }
     }
 

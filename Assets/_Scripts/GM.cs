@@ -47,9 +47,15 @@ public class GM : MonoBehaviour
             blueLives--;
             blueText.text = "Lives: " + blueLives;
         }
-        else if (blueLives < 1)
+        else if (blueLives <= 1)
         {
+            blueLives--;
+            blueText.text = "Lives: " + blueLives;
             Destroy(blue);
+        }
+        if (blueLives == 0)
+        {
+            blueText.text = "Lives: " + "Dead";
         }
     }
 
@@ -60,9 +66,15 @@ public class GM : MonoBehaviour
             redLives--;
             redText.text = "Lives: " + redLives;
         }
-        else if (redLives < 1)
+        else if (redLives <= 1)
         {
+            redLives--;
+            redText.text = "Lives: " + redLives;
             Destroy(red);
+        }
+        if (redLives == 0)
+        {
+            redText.text = "Lives: " + "Dead";
         }
     }
 
@@ -73,9 +85,15 @@ public class GM : MonoBehaviour
             yellowLives--;
             yellowText.text = "Lives: " + yellowLives;
         }
-        else if (yellowLives < 1)
+        else if (yellowLives <= 1)
         {
+            yellowLives--;
+            yellowText.text = "Lives: " + yellowLives;
             Destroy(yellow);
+        }
+        if (yellowLives == 0)
+        {
+            yellowText.text = "Lives: " + "Dead";
         }
     }
 
@@ -86,11 +104,12 @@ public class GM : MonoBehaviour
             greenLives--;
             greenText.text = "Lives: " + greenLives;
         }
-        else if (greenLives < 1)
+        else if (greenLives <= 1)
         {
+            greenLives--;
+            greenText.text = "Lives: " + greenLives;
             Destroy(green);
         }
-
         if (greenLives == 0)
         {
             greenText.text = "Lives: " + "Dead";
