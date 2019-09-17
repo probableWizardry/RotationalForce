@@ -5,7 +5,7 @@ using UnityEngine;
 //Allows for allocating of players so we don't need 4 different player scripts
 public enum players
 {
-    blue, red, green, yellow
+    blue, red, green, yellow, teal, orange
 }
 
 
@@ -37,7 +37,7 @@ public class Players : MonoBehaviour
         }
         else if (p == players.red)
         {
-            actionButton = KeyCode.Z;
+            actionButton = KeyCode.X;
         }
         else if (p == players.green)
         {
@@ -46,6 +46,14 @@ public class Players : MonoBehaviour
         else if (p == players.yellow)
         {
             actionButton = KeyCode.M;
+        }
+        else if (p == players.teal)
+        {
+            actionButton = KeyCode.T;
+        }
+        else if (p == players.orange)
+        {
+            actionButton = KeyCode.B;
         }
     }
 
@@ -61,7 +69,7 @@ public class Players : MonoBehaviour
 
             if (Input.GetKey(actionButton))
             {
-                transform.RotateAround(selectedPeg.position, transform.up,90 * Time.deltaTime);
+                transform.RotateAround(selectedPeg.position, transform.up,360 * Time.deltaTime);
                 transform.LookAt(selectedPeg);
                 transform.Rotate(new Vector3(0, -90, 0));
             }
@@ -80,7 +88,7 @@ public class Players : MonoBehaviour
         }
     }
 
-    
+
     //This code tests for the closest, I believe they are referred to as "pegs" in the scene, then returns the closest target. Don't entirely know how though
     Transform GetClosestHook(Transform[] hook)
     {
