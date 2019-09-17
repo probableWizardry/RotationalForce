@@ -8,6 +8,7 @@ TagManager:
   - RedBird
   - YellowBird
   - GreenBird
+  - Ball
   layers:
   - Default
   - TransparentFX

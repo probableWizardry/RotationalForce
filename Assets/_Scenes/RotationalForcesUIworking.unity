@@ -1425,7 +1425,7 @@ GameObject:
   - component: {fileID: 790040621}
   m_Layer: 0
   m_Name: TempYellow
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1587,14 +1587,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 790040614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8916ac57b5c31b4d8456ee9284f0d8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ec9f21cbfe6e77458f39ee8c0154d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pegs: []
   p: 0
-  inPlay: 0
+  inPlay: 1
   actionButton: 0
+  rb: {fileID: 790040617}
   speed: 5500
+  rotateSpeed: 500
 --- !u!1 &839361331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1706,7 @@ GameObject:
   - component: {fileID: 853288315}
   m_Layer: 0
   m_Name: TempBlue
-  m_TagString: Untagged
+  m_TagString: BlueBird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1866,14 +1868,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 853288308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8916ac57b5c31b4d8456ee9284f0d8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ec9f21cbfe6e77458f39ee8c0154d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pegs: []
   p: 0
-  inPlay: 0
+  inPlay: 1
   actionButton: 0
+  rb: {fileID: 853288310}
   speed: 5500
+  rotateSpeed: 500
 --- !u!1 &866378633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3980,7 +3984,7 @@ GameObject:
   - component: {fileID: 1629079127}
   m_Layer: 0
   m_Name: TempRed
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4142,14 +4146,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629079120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8916ac57b5c31b4d8456ee9284f0d8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ec9f21cbfe6e77458f39ee8c0154d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pegs: []
   p: 0
-  inPlay: 0
+  inPlay: 1
   actionButton: 0
+  rb: {fileID: 1629079123}
   speed: 5500
+  rotateSpeed: 500
 --- !u!1 &1697550012
 GameObject:
   m_ObjectHideFlags: 0
@@ -4425,7 +4431,7 @@ GameObject:
   - component: {fileID: 1822646415}
   m_Layer: 0
   m_Name: TempGreen
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4587,14 +4593,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1822646408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8916ac57b5c31b4d8456ee9284f0d8a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ec9f21cbfe6e77458f39ee8c0154d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pegs: []
   p: 0
-  inPlay: 0
+  inPlay: 1
   actionButton: 0
+  rb: {fileID: 1822646411}
   speed: 5500
+  rotateSpeed: 500
 --- !u!1 &1857265059
 GameObject:
   m_ObjectHideFlags: 0
@@ -5441,6 +5449,7 @@ MonoBehaviour:
   redLives: 3
   yellowLives: 3
   greenLives: 3
+  players: 4
   blue: {fileID: 518858682}
   red: {fileID: 1271587903}
   yellow: {fileID: 1069495916}
@@ -5449,6 +5458,7 @@ MonoBehaviour:
   redText: {fileID: 883830797}
   yellowText: {fileID: 402598785}
   greenText: {fileID: 1500494693}
+  winner: {fileID: 0}
 --- !u!1 &2027627458
 GameObject:
   m_ObjectHideFlags: 0
